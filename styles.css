@@ -71,6 +71,14 @@ form input, form textarea, form select {
     font-family: var(--fonte-secundaria);
 }
 
+#resultados {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 button {
     background-color: #b1c266;
     color: white;
