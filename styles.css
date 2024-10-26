@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{    
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif
+}
+/* Estilo básico para cabeçalho */
+
+body {
+    margin: 0;
+    padding: 0; /* ajuste esse css para que os botons fiquem menores, o mapa seja em miniatura */
+    font-family: var(--fonte-secundaria);
+}
+
+header {
+    position: relative;
+    text-align: center;
+    color: black;
+    padding: 0; /* Diminuindo o padding para encolher a altura do cabeçalho */
+    min-height: 10vh; /* Ajuste para menor altura do cabeçalho */
+    overflow: hidden; /* Garante que o conteúdo não extrapole o header */
+    font-family: var(--fonte-secundaria);
+}
+
+#header-logo {
+    max-width: 100%; /* Ajuste do tamanho do logo para 30% da largura */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 auto;
+    display: block; /* Centraliza a imagem horizontalmente */
+    position: relative; /* Para que a imagem fique acima do fundo */
+    z-index: 1; /* Coloca a imagem acima do fundo */
+}
+
+h1, p {
+    position: relative;
+    z-index: 1; /* Coloca o texto acima do fundo */
+    font-family: var(--fonte-primaria);
+}
+
+h1 {
+    font-size: 2vw; /* Tamanho da fonte proporcional à largura da tela */
+}
+
+p {
+    font-size: 1.2vw; /* Tamanho da fonte proporcional à largura da tela */
+}
+
+#mapa, #relatos {
+    padding: 2rem;
+    font-family: var(--fonte-primaria);
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 1rem;
+    display: block;
+}
+
+/* Ajuste todos os campos de entrada, textarea, select, e botão */
+form input, form textarea, form select {
+    width: 100%; /* Certifique-se de que todos os campos ocupam 100% da largura */
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc; /* Adiciona uma borda padrão para todos os campos */
+    border-radius: 5px; /* Borda arredondada */
+    font-family: var(--fonte-secundaria);
+}
+
+button {
+    background-color: #b1c266;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem; /* Tamanho do botão */
+    margin-top: 1rem;
+    display: block; /* Garante que o botão fique centralizado */
+    margin-left: auto; /* Alinha à direita */
+    margin-right: auto; /* Alinha à esquerda */
+    font-family: var(--fonte-secundaria);
+}
+
+button:hover {
+    background-color: #c0cc96;
+}
+
+.relato {
+    margin: 10px 0;
+}
+
+.selecionar__opcao select {
+    width: 100%; /* Assegura que o select ocupe 100% da largura */
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF0000"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 15px;
+    cursor: pointer;
+}
+
+

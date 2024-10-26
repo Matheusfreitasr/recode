@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Emergência - Rio Grande do Sul</title>
+    
+    <!-- Links de Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <img src="img/header-logo.png" alt="Plataforma de Emergência" id="header-logo">
+        <h1>Plataforma de Emergência - Enchentes</h1>
+        <p>Apoio para comunidades afetadas por enchentes</p>
+    </header>
+
+    <!-- Mapa Interativo -->
+    <section id="mapa">
+        <h2>Mapa de Áreas Afetadas e Abrigos</h2>
+        <div id="map" style="height: 500px;"></div>
+        <p>Clique nas áreas para ver informações e relatos.</p>
+    </section>
+
+    <!-- Relatos de Emergência -->
+    <section id="relatos">
+        <h2>Relatos de Emergência</h2>
+        <form id="relatoForm">
+            <label for="localizacao">Localização:</label>
+            <input type="text" id="localizacao" placeholder="Digite a localização (bairro, rua, CEP)" required>
+
+            <label for="descricao">Descrição do Problema:</label>
+            <textarea id="descricao" name="descricao" placeholder="Descreva o problema" required></textarea>
+
+            <label for="tipoRelato">Tipo de Relato:</label>
+            <div class="selecionar__opcao">
+                <select id="tipoRelato" required>
+                    <option value="">Selecione...</option>
+                    <option value="emergencia">Emergência</option>
+                    <option value="abrigo">Lugar Seguro</option>
+                    <option value="desaparecido">Pessoa Desaparecida</option>
+                </select>
+            </div>
+
+            <div class="botao">
+                <button type="submit">Enviar Relato</button>
+            </div>
+        </form>
+
+        <div id="listaRelatos">
+            <h3>Relatos Recentes</h3>
+            <!-- Aqui você pode adicionar os relatos recentes dinamicamente via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
