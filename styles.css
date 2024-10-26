@@ -112,7 +112,7 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    #mapa {
+    #map {
         height: 40vh; /* Diminui a altura do mapa em telas menores */
     }
 
@@ -130,7 +130,7 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-    #mapa {
+    #map {
         height: 30vh; /* Diminui ainda mais a altura do mapa em telas pequenas */
     }
 
