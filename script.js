@@ -1,4 +1,3 @@
-// Configuração do mapa Leaflet
 const map = L.map('map').setView([-29.68, -53.8], 8);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,11 +7,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const markers = L.markerClusterGroup();
 
-// Função para adicionar o marcador no mapa
 function adicionarMarcador(coordenadas, descricao, tipo, nomeLocalizacao) {
     let iconUrl = '';
-
-    // Define o ícone com base no tipo de relato
+    
     switch (tipo) {
         case 'desaparecido':
             iconUrl = 'icons/desaparecido.png';
@@ -37,7 +34,6 @@ function adicionarMarcador(coordenadas, descricao, tipo, nomeLocalizacao) {
 
     markers.addLayer(marker);
 
-    // Adiciona o relato na lista de relatos recentes
     const relatoDiv = document.createElement('div');
     relatoDiv.className = 'relato';
     relatoDiv.innerHTML = `<strong>Local:</strong> ${nomeLocalizacao}<br><strong>Descrição:</strong> ${descricao}<br><strong>Tipo:</strong> ${tipo}`;
@@ -45,8 +41,6 @@ function adicionarMarcador(coordenadas, descricao, tipo, nomeLocalizacao) {
 
     map.addLayer(markers);
 }
-
-// Função para buscar coordenadas usando a API Nominatim
 async function buscarCoordenadas(localizacao) {
     try {
         const resposta = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(localizacao)}&addressdetails=1`);
@@ -60,9 +54,7 @@ async function buscarCoordenadas(localizacao) {
     }
 }
 
-// Função para mostrar resultados da busca de localização e permitir escolha
 function mostrarResultados(dados, descricao, tipo) {
-    // Remove a lista de resultados anterior, se existir
     const resultadosAnteriores = document.getElementById('resultados');
     if (resultadosAnteriores) resultadosAnteriores.remove();
 
@@ -84,22 +76,19 @@ function mostrarResultados(dados, descricao, tipo) {
     document.getElementById('relatos').appendChild(listaResultados);
 }
 
-// Função para adicionar marcador ao mapa com nome de localização
 function adicionarMarcadorNaSelecao(coordenadas, descricao, tipo, nomeLocalizacao) {
     adicionarMarcador(coordenadas, descricao, tipo, nomeLocalizacao);
     const resultadosElement = document.getElementById('resultados');
-    if (resultadosElement) resultadosElement.remove();  // Remove os resultados de localização após a seleção
+    if (resultadosElement) resultadosElement.remove();
 }
 
-// Evento para o envio do formulário de relatos
 document.getElementById('relatoForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const localizacao = document.getElementById('localizacao').value;
     const descricao = document.getElementById('descricao').value;
     const tipo = document.getElementById('tipoRelato').value;
-
-    // Busca coordenadas e exibe resultados de seleção
+    
     const coordenadas = await buscarCoordenadas(localizacao);
     if (coordenadas) {
         mostrarResultados(coordenadas, descricao, tipo);
