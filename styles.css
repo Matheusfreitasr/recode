@@ -57,15 +57,15 @@ p {
 #mapa {
     padding: 2rem;
     font-family: var(--fonte-primaria);
-    max-width: 800px; /* Ajuste a largura máxima do formulário */
-    margin: 0 auto; /* Centraliza o formulário */
+    max-width: 800px;
+    margin: 0 auto; 
 }
 
 #relatos {
     padding: 2rem;
     font-family: var(--fonte-primaria);
-    max-width: 800px; /* Ajuste a largura máxima do formulário */
-    margin: 0 auto; /* Centraliza o formulário */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 form label {
