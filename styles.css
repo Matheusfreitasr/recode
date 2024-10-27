@@ -54,6 +54,20 @@ p {
     font-family: var(--fonte-primaria);
 }
 
+#mapa {
+    padding: 2rem;
+    font-family: var(--fonte-primaria);
+    max-width: 800px; /* Ajuste a largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+#relatos {
+    padding: 2rem;
+    font-family: var(--fonte-primaria);
+    max-width: 800px; /* Ajuste a largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
 form label {
     font-weight: bold;
     margin-top: 1rem;
